@@ -1,0 +1,50 @@
+buildscript {
+    ext {
+        cucumberVersion = '1.2.6'
+        junitVersion = '4.12'
+        seleniumVersion = '3.14'
+        serenityVersion = '2.0.70'
+        serenityCucumberVersion = '1.9.45'
+    }
+
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:$serenityVersion")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+   
+    compile "net.serenity-bdd:serenity-cucumber:$serenityCucumberVersion"
+    compile "net.serenity-bdd:serenity-core:$serenityVersion"
+    compile "net.serenity-bdd:serenity-junit:$serenityVersion"
+    compile "net.serenity-bdd:serenity-screenplay:$serenityVersion"
+    compile "net.serenity-bdd:serenity-screenplay-webdriver:$serenityVersion"
+    compile 'org.projectlombok:lombok:1.18.12'
+    compile 'org.assertj:assertj-core:3.17.2'
+    compile 'org.hamcrest:hamcrest-all:1.3'
+    compile 'com.googlecode.lambdaj:lambdaj:2.3.3'
+
+    testCompile "junit:junit:$junitVersion"
+    testCompile('org.slf4j:slf4j-simple:1.7.30')
+}
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
+
+gradle.startParameter.continueOnFailure = true
