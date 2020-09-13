@@ -10,7 +10,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(features = "src/test/resources/features/search_fly.feature", 
 glue = "com/co/psstv/despegar/stepdefinitions", 
-		/* tags = "@familiaa", */  snippets = CAMELCASE)
+		/* tags = "@familiaa", */   snippets = CAMELCASE)
 public class SearchRun {
 
 }
