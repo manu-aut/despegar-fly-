@@ -1,4 +1,4 @@
-Feature: buscar vuelos baratos reserva flexible
+Feature: find cheap flights flexible booking
   
    To save money
    As a casual traveler
