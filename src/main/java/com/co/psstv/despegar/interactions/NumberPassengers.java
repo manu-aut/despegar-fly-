@@ -1,7 +1,5 @@
 package com.co.psstv.despegar.interactions;
 
-import static com.co.psstv.despegar.userinterface.FlyPage.MASMAS;
-import static com.co.psstv.despegar.userinterface.FlyPage.PASSENGERS;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import java.util.List;
@@ -25,10 +23,10 @@ public class NumberPassengers implements Interaction {
 	public <T extends Actor> void performAs(T actor) {
 
 		int passengersNumber = Integer.parseInt(flyDate.getAdults());
-		actor.attemptsTo(Click.on(PASSENGERS));
+		actor.attemptsTo(Click.on());
 
 		for (int i = 0; i < passengersNumber; i++) {
-			actor.attemptsTo(Click.on(MASMAS));
+			actor.attemptsTo(Click.on());
 
 		}
 
